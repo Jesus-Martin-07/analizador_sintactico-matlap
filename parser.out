@@ -1,0 +1,771 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    DOBLE_PUNTO
+
+Grammar
+
+Rule 0     S' -> declaracion
+Rule 1     declaracion -> IMPRIMIR PARENTESIS_IZQUIERDO STRING PARENTESIS_DERECHO
+Rule 2     declaracion -> IF expresion
+Rule 3     declaracion -> ELSE
+Rule 4     declaracion -> VARIABLE IGUAL expresion
+Rule 5     declaracion -> expresion
+Rule 6     expresion -> expresion MAS expresion
+Rule 7     expresion -> expresion MENOS expresion
+Rule 8     expresion -> expresion MULTIPLICACION expresion
+Rule 9     expresion -> expresion DIVISION expresion
+Rule 10    expresion -> expresion MENOR expresion
+Rule 11    expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion
+Rule 12    expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion
+Rule 13    expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+Rule 14    expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion
+Rule 15    expresion -> NUMERO
+Rule 16    expresion -> VARIABLE
+Rule 17    expresion -> END
+
+Terminals, with rules where they appear
+
+DIVISION             : 9 14
+DOBLE_PUNTO          : 
+ELSE                 : 3
+END                  : 17
+IF                   : 2
+IGUAL                : 4
+IMPRIMIR             : 1
+MAS                  : 6 11
+MENOR                : 10
+MENOS                : 7 12
+MULTIPLICACION       : 8 13
+NUMERO               : 15
+PARENTESIS_DERECHO   : 1 11 12 13 14
+PARENTESIS_IZQUIERDO : 1 11 12 13 14
+STRING               : 1
+VARIABLE             : 4 16
+error                : 
+
+Nonterminals, with rules where they appear
+
+declaracion          : 0
+expresion            : 2 4 5 6 6 7 7 8 8 9 9 10 10 11 11 12 12 13 13 14 14
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . declaracion
+    (1) declaracion -> . IMPRIMIR PARENTESIS_IZQUIERDO STRING PARENTESIS_DERECHO
+    (2) declaracion -> . IF expresion
+    (3) declaracion -> . ELSE
+    (4) declaracion -> . VARIABLE IGUAL expresion
+    (5) declaracion -> . expresion
+    (6) expresion -> . expresion MAS expresion
+    (7) expresion -> . expresion MENOS expresion
+    (8) expresion -> . expresion MULTIPLICACION expresion
+    (9) expresion -> . expresion DIVISION expresion
+    (10) expresion -> . expresion MENOR expresion
+    (11) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion
+    (15) expresion -> . NUMERO
+    (16) expresion -> . VARIABLE
+    (17) expresion -> . END
+
+    IMPRIMIR        shift and go to state 2
+    IF              shift and go to state 4
+    ELSE            shift and go to state 6
+    VARIABLE        shift and go to state 7
+    PARENTESIS_IZQUIERDO shift and go to state 3
+    NUMERO          shift and go to state 8
+    END             shift and go to state 9
+
+    declaracion                    shift and go to state 1
+    expresion                      shift and go to state 5
+
+state 1
+
+    (0) S' -> declaracion .
+
+
+
+state 2
+
+    (1) declaracion -> IMPRIMIR . PARENTESIS_IZQUIERDO STRING PARENTESIS_DERECHO
+
+    PARENTESIS_IZQUIERDO shift and go to state 10
+
+
+state 3
+
+    (11) expresion -> PARENTESIS_IZQUIERDO . expresion PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> PARENTESIS_IZQUIERDO . expresion PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> PARENTESIS_IZQUIERDO . expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> PARENTESIS_IZQUIERDO . expresion PARENTESIS_DERECHO DIVISION expresion
+    (6) expresion -> . expresion MAS expresion
+    (7) expresion -> . expresion MENOS expresion
+    (8) expresion -> . expresion MULTIPLICACION expresion
+    (9) expresion -> . expresion DIVISION expresion
+    (10) expresion -> . expresion MENOR expresion
+    (11) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion
+    (15) expresion -> . NUMERO
+    (16) expresion -> . VARIABLE
+    (17) expresion -> . END
+
+    PARENTESIS_IZQUIERDO shift and go to state 3
+    NUMERO          shift and go to state 8
+    VARIABLE        shift and go to state 12
+    END             shift and go to state 9
+
+    expresion                      shift and go to state 11
+
+state 4
+
+    (2) declaracion -> IF . expresion
+    (6) expresion -> . expresion MAS expresion
+    (7) expresion -> . expresion MENOS expresion
+    (8) expresion -> . expresion MULTIPLICACION expresion
+    (9) expresion -> . expresion DIVISION expresion
+    (10) expresion -> . expresion MENOR expresion
+    (11) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion
+    (15) expresion -> . NUMERO
+    (16) expresion -> . VARIABLE
+    (17) expresion -> . END
+
+    PARENTESIS_IZQUIERDO shift and go to state 3
+    NUMERO          shift and go to state 8
+    VARIABLE        shift and go to state 12
+    END             shift and go to state 9
+
+    expresion                      shift and go to state 13
+
+state 5
+
+    (5) declaracion -> expresion .
+    (6) expresion -> expresion . MAS expresion
+    (7) expresion -> expresion . MENOS expresion
+    (8) expresion -> expresion . MULTIPLICACION expresion
+    (9) expresion -> expresion . DIVISION expresion
+    (10) expresion -> expresion . MENOR expresion
+
+    $end            reduce using rule 5 (declaracion -> expresion .)
+    MAS             shift and go to state 14
+    MENOS           shift and go to state 15
+    MULTIPLICACION  shift and go to state 16
+    DIVISION        shift and go to state 17
+    MENOR           shift and go to state 18
+
+
+state 6
+
+    (3) declaracion -> ELSE .
+
+    $end            reduce using rule 3 (declaracion -> ELSE .)
+
+
+state 7
+
+    (4) declaracion -> VARIABLE . IGUAL expresion
+    (16) expresion -> VARIABLE .
+
+    IGUAL           shift and go to state 19
+    MAS             reduce using rule 16 (expresion -> VARIABLE .)
+    MENOS           reduce using rule 16 (expresion -> VARIABLE .)
+    MULTIPLICACION  reduce using rule 16 (expresion -> VARIABLE .)
+    DIVISION        reduce using rule 16 (expresion -> VARIABLE .)
+    MENOR           reduce using rule 16 (expresion -> VARIABLE .)
+    $end            reduce using rule 16 (expresion -> VARIABLE .)
+
+
+state 8
+
+    (15) expresion -> NUMERO .
+
+    MAS             reduce using rule 15 (expresion -> NUMERO .)
+    MENOS           reduce using rule 15 (expresion -> NUMERO .)
+    MULTIPLICACION  reduce using rule 15 (expresion -> NUMERO .)
+    DIVISION        reduce using rule 15 (expresion -> NUMERO .)
+    MENOR           reduce using rule 15 (expresion -> NUMERO .)
+    $end            reduce using rule 15 (expresion -> NUMERO .)
+    PARENTESIS_DERECHO reduce using rule 15 (expresion -> NUMERO .)
+
+
+state 9
+
+    (17) expresion -> END .
+
+    MAS             reduce using rule 17 (expresion -> END .)
+    MENOS           reduce using rule 17 (expresion -> END .)
+    MULTIPLICACION  reduce using rule 17 (expresion -> END .)
+    DIVISION        reduce using rule 17 (expresion -> END .)
+    MENOR           reduce using rule 17 (expresion -> END .)
+    $end            reduce using rule 17 (expresion -> END .)
+    PARENTESIS_DERECHO reduce using rule 17 (expresion -> END .)
+
+
+state 10
+
+    (1) declaracion -> IMPRIMIR PARENTESIS_IZQUIERDO . STRING PARENTESIS_DERECHO
+
+    STRING          shift and go to state 20
+
+
+state 11
+
+    (11) expresion -> PARENTESIS_IZQUIERDO expresion . PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> PARENTESIS_IZQUIERDO expresion . PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> PARENTESIS_IZQUIERDO expresion . PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> PARENTESIS_IZQUIERDO expresion . PARENTESIS_DERECHO DIVISION expresion
+    (6) expresion -> expresion . MAS expresion
+    (7) expresion -> expresion . MENOS expresion
+    (8) expresion -> expresion . MULTIPLICACION expresion
+    (9) expresion -> expresion . DIVISION expresion
+    (10) expresion -> expresion . MENOR expresion
+
+    PARENTESIS_DERECHO shift and go to state 21
+    MAS             shift and go to state 14
+    MENOS           shift and go to state 15
+    MULTIPLICACION  shift and go to state 16
+    DIVISION        shift and go to state 17
+    MENOR           shift and go to state 18
+
+
+state 12
+
+    (16) expresion -> VARIABLE .
+
+    PARENTESIS_DERECHO reduce using rule 16 (expresion -> VARIABLE .)
+    MAS             reduce using rule 16 (expresion -> VARIABLE .)
+    MENOS           reduce using rule 16 (expresion -> VARIABLE .)
+    MULTIPLICACION  reduce using rule 16 (expresion -> VARIABLE .)
+    DIVISION        reduce using rule 16 (expresion -> VARIABLE .)
+    MENOR           reduce using rule 16 (expresion -> VARIABLE .)
+    $end            reduce using rule 16 (expresion -> VARIABLE .)
+
+
+state 13
+
+    (2) declaracion -> IF expresion .
+    (6) expresion -> expresion . MAS expresion
+    (7) expresion -> expresion . MENOS expresion
+    (8) expresion -> expresion . MULTIPLICACION expresion
+    (9) expresion -> expresion . DIVISION expresion
+    (10) expresion -> expresion . MENOR expresion
+
+    $end            reduce using rule 2 (declaracion -> IF expresion .)
+    MAS             shift and go to state 14
+    MENOS           shift and go to state 15
+    MULTIPLICACION  shift and go to state 16
+    DIVISION        shift and go to state 17
+    MENOR           shift and go to state 18
+
+
+state 14
+
+    (6) expresion -> expresion MAS . expresion
+    (6) expresion -> . expresion MAS expresion
+    (7) expresion -> . expresion MENOS expresion
+    (8) expresion -> . expresion MULTIPLICACION expresion
+    (9) expresion -> . expresion DIVISION expresion
+    (10) expresion -> . expresion MENOR expresion
+    (11) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion
+    (15) expresion -> . NUMERO
+    (16) expresion -> . VARIABLE
+    (17) expresion -> . END
+
+    PARENTESIS_IZQUIERDO shift and go to state 3
+    NUMERO          shift and go to state 8
+    VARIABLE        shift and go to state 12
+    END             shift and go to state 9
+
+    expresion                      shift and go to state 22
+
+state 15
+
+    (7) expresion -> expresion MENOS . expresion
+    (6) expresion -> . expresion MAS expresion
+    (7) expresion -> . expresion MENOS expresion
+    (8) expresion -> . expresion MULTIPLICACION expresion
+    (9) expresion -> . expresion DIVISION expresion
+    (10) expresion -> . expresion MENOR expresion
+    (11) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion
+    (15) expresion -> . NUMERO
+    (16) expresion -> . VARIABLE
+    (17) expresion -> . END
+
+    PARENTESIS_IZQUIERDO shift and go to state 3
+    NUMERO          shift and go to state 8
+    VARIABLE        shift and go to state 12
+    END             shift and go to state 9
+
+    expresion                      shift and go to state 23
+
+state 16
+
+    (8) expresion -> expresion MULTIPLICACION . expresion
+    (6) expresion -> . expresion MAS expresion
+    (7) expresion -> . expresion MENOS expresion
+    (8) expresion -> . expresion MULTIPLICACION expresion
+    (9) expresion -> . expresion DIVISION expresion
+    (10) expresion -> . expresion MENOR expresion
+    (11) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion
+    (15) expresion -> . NUMERO
+    (16) expresion -> . VARIABLE
+    (17) expresion -> . END
+
+    PARENTESIS_IZQUIERDO shift and go to state 3
+    NUMERO          shift and go to state 8
+    VARIABLE        shift and go to state 12
+    END             shift and go to state 9
+
+    expresion                      shift and go to state 24
+
+state 17
+
+    (9) expresion -> expresion DIVISION . expresion
+    (6) expresion -> . expresion MAS expresion
+    (7) expresion -> . expresion MENOS expresion
+    (8) expresion -> . expresion MULTIPLICACION expresion
+    (9) expresion -> . expresion DIVISION expresion
+    (10) expresion -> . expresion MENOR expresion
+    (11) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion
+    (15) expresion -> . NUMERO
+    (16) expresion -> . VARIABLE
+    (17) expresion -> . END
+
+    PARENTESIS_IZQUIERDO shift and go to state 3
+    NUMERO          shift and go to state 8
+    VARIABLE        shift and go to state 12
+    END             shift and go to state 9
+
+    expresion                      shift and go to state 25
+
+state 18
+
+    (10) expresion -> expresion MENOR . expresion
+    (6) expresion -> . expresion MAS expresion
+    (7) expresion -> . expresion MENOS expresion
+    (8) expresion -> . expresion MULTIPLICACION expresion
+    (9) expresion -> . expresion DIVISION expresion
+    (10) expresion -> . expresion MENOR expresion
+    (11) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion
+    (15) expresion -> . NUMERO
+    (16) expresion -> . VARIABLE
+    (17) expresion -> . END
+
+    PARENTESIS_IZQUIERDO shift and go to state 3
+    NUMERO          shift and go to state 8
+    VARIABLE        shift and go to state 12
+    END             shift and go to state 9
+
+    expresion                      shift and go to state 26
+
+state 19
+
+    (4) declaracion -> VARIABLE IGUAL . expresion
+    (6) expresion -> . expresion MAS expresion
+    (7) expresion -> . expresion MENOS expresion
+    (8) expresion -> . expresion MULTIPLICACION expresion
+    (9) expresion -> . expresion DIVISION expresion
+    (10) expresion -> . expresion MENOR expresion
+    (11) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion
+    (15) expresion -> . NUMERO
+    (16) expresion -> . VARIABLE
+    (17) expresion -> . END
+
+    PARENTESIS_IZQUIERDO shift and go to state 3
+    NUMERO          shift and go to state 8
+    VARIABLE        shift and go to state 12
+    END             shift and go to state 9
+
+    expresion                      shift and go to state 27
+
+state 20
+
+    (1) declaracion -> IMPRIMIR PARENTESIS_IZQUIERDO STRING . PARENTESIS_DERECHO
+
+    PARENTESIS_DERECHO shift and go to state 28
+
+
+state 21
+
+    (11) expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO . MAS expresion
+    (12) expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO . MENOS expresion
+    (13) expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO . MULTIPLICACION expresion
+    (14) expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO . DIVISION expresion
+
+    MAS             shift and go to state 29
+    MENOS           shift and go to state 30
+    MULTIPLICACION  shift and go to state 31
+    DIVISION        shift and go to state 32
+
+
+state 22
+
+    (6) expresion -> expresion MAS expresion .
+    (6) expresion -> expresion . MAS expresion
+    (7) expresion -> expresion . MENOS expresion
+    (8) expresion -> expresion . MULTIPLICACION expresion
+    (9) expresion -> expresion . DIVISION expresion
+    (10) expresion -> expresion . MENOR expresion
+
+    MAS             reduce using rule 6 (expresion -> expresion MAS expresion .)
+    MENOS           reduce using rule 6 (expresion -> expresion MAS expresion .)
+    MENOR           reduce using rule 6 (expresion -> expresion MAS expresion .)
+    $end            reduce using rule 6 (expresion -> expresion MAS expresion .)
+    PARENTESIS_DERECHO reduce using rule 6 (expresion -> expresion MAS expresion .)
+    MULTIPLICACION  shift and go to state 16
+    DIVISION        shift and go to state 17
+
+  ! MULTIPLICACION  [ reduce using rule 6 (expresion -> expresion MAS expresion .) ]
+  ! DIVISION        [ reduce using rule 6 (expresion -> expresion MAS expresion .) ]
+  ! MAS             [ shift and go to state 14 ]
+  ! MENOS           [ shift and go to state 15 ]
+  ! MENOR           [ shift and go to state 18 ]
+
+
+state 23
+
+    (7) expresion -> expresion MENOS expresion .
+    (6) expresion -> expresion . MAS expresion
+    (7) expresion -> expresion . MENOS expresion
+    (8) expresion -> expresion . MULTIPLICACION expresion
+    (9) expresion -> expresion . DIVISION expresion
+    (10) expresion -> expresion . MENOR expresion
+
+    MAS             reduce using rule 7 (expresion -> expresion MENOS expresion .)
+    MENOS           reduce using rule 7 (expresion -> expresion MENOS expresion .)
+    MENOR           reduce using rule 7 (expresion -> expresion MENOS expresion .)
+    $end            reduce using rule 7 (expresion -> expresion MENOS expresion .)
+    PARENTESIS_DERECHO reduce using rule 7 (expresion -> expresion MENOS expresion .)
+    MULTIPLICACION  shift and go to state 16
+    DIVISION        shift and go to state 17
+
+  ! MULTIPLICACION  [ reduce using rule 7 (expresion -> expresion MENOS expresion .) ]
+  ! DIVISION        [ reduce using rule 7 (expresion -> expresion MENOS expresion .) ]
+  ! MAS             [ shift and go to state 14 ]
+  ! MENOS           [ shift and go to state 15 ]
+  ! MENOR           [ shift and go to state 18 ]
+
+
+state 24
+
+    (8) expresion -> expresion MULTIPLICACION expresion .
+    (6) expresion -> expresion . MAS expresion
+    (7) expresion -> expresion . MENOS expresion
+    (8) expresion -> expresion . MULTIPLICACION expresion
+    (9) expresion -> expresion . DIVISION expresion
+    (10) expresion -> expresion . MENOR expresion
+
+    MAS             reduce using rule 8 (expresion -> expresion MULTIPLICACION expresion .)
+    MENOS           reduce using rule 8 (expresion -> expresion MULTIPLICACION expresion .)
+    MULTIPLICACION  reduce using rule 8 (expresion -> expresion MULTIPLICACION expresion .)
+    DIVISION        reduce using rule 8 (expresion -> expresion MULTIPLICACION expresion .)
+    MENOR           reduce using rule 8 (expresion -> expresion MULTIPLICACION expresion .)
+    $end            reduce using rule 8 (expresion -> expresion MULTIPLICACION expresion .)
+    PARENTESIS_DERECHO reduce using rule 8 (expresion -> expresion MULTIPLICACION expresion .)
+
+  ! MAS             [ shift and go to state 14 ]
+  ! MENOS           [ shift and go to state 15 ]
+  ! MULTIPLICACION  [ shift and go to state 16 ]
+  ! DIVISION        [ shift and go to state 17 ]
+  ! MENOR           [ shift and go to state 18 ]
+
+
+state 25
+
+    (9) expresion -> expresion DIVISION expresion .
+    (6) expresion -> expresion . MAS expresion
+    (7) expresion -> expresion . MENOS expresion
+    (8) expresion -> expresion . MULTIPLICACION expresion
+    (9) expresion -> expresion . DIVISION expresion
+    (10) expresion -> expresion . MENOR expresion
+
+    MAS             reduce using rule 9 (expresion -> expresion DIVISION expresion .)
+    MENOS           reduce using rule 9 (expresion -> expresion DIVISION expresion .)
+    MULTIPLICACION  reduce using rule 9 (expresion -> expresion DIVISION expresion .)
+    DIVISION        reduce using rule 9 (expresion -> expresion DIVISION expresion .)
+    MENOR           reduce using rule 9 (expresion -> expresion DIVISION expresion .)
+    $end            reduce using rule 9 (expresion -> expresion DIVISION expresion .)
+    PARENTESIS_DERECHO reduce using rule 9 (expresion -> expresion DIVISION expresion .)
+
+  ! MAS             [ shift and go to state 14 ]
+  ! MENOS           [ shift and go to state 15 ]
+  ! MULTIPLICACION  [ shift and go to state 16 ]
+  ! DIVISION        [ shift and go to state 17 ]
+  ! MENOR           [ shift and go to state 18 ]
+
+
+state 26
+
+    (10) expresion -> expresion MENOR expresion .
+    (6) expresion -> expresion . MAS expresion
+    (7) expresion -> expresion . MENOS expresion
+    (8) expresion -> expresion . MULTIPLICACION expresion
+    (9) expresion -> expresion . DIVISION expresion
+    (10) expresion -> expresion . MENOR expresion
+
+  ! shift/reduce conflict for MAS resolved as shift
+  ! shift/reduce conflict for MENOS resolved as shift
+  ! shift/reduce conflict for MULTIPLICACION resolved as shift
+  ! shift/reduce conflict for DIVISION resolved as shift
+  ! shift/reduce conflict for MENOR resolved as shift
+    $end            reduce using rule 10 (expresion -> expresion MENOR expresion .)
+    PARENTESIS_DERECHO reduce using rule 10 (expresion -> expresion MENOR expresion .)
+    MAS             shift and go to state 14
+    MENOS           shift and go to state 15
+    MULTIPLICACION  shift and go to state 16
+    DIVISION        shift and go to state 17
+    MENOR           shift and go to state 18
+
+  ! MAS             [ reduce using rule 10 (expresion -> expresion MENOR expresion .) ]
+  ! MENOS           [ reduce using rule 10 (expresion -> expresion MENOR expresion .) ]
+  ! MULTIPLICACION  [ reduce using rule 10 (expresion -> expresion MENOR expresion .) ]
+  ! DIVISION        [ reduce using rule 10 (expresion -> expresion MENOR expresion .) ]
+  ! MENOR           [ reduce using rule 10 (expresion -> expresion MENOR expresion .) ]
+
+
+state 27
+
+    (4) declaracion -> VARIABLE IGUAL expresion .
+    (6) expresion -> expresion . MAS expresion
+    (7) expresion -> expresion . MENOS expresion
+    (8) expresion -> expresion . MULTIPLICACION expresion
+    (9) expresion -> expresion . DIVISION expresion
+    (10) expresion -> expresion . MENOR expresion
+
+    $end            reduce using rule 4 (declaracion -> VARIABLE IGUAL expresion .)
+    MAS             shift and go to state 14
+    MENOS           shift and go to state 15
+    MULTIPLICACION  shift and go to state 16
+    DIVISION        shift and go to state 17
+    MENOR           shift and go to state 18
+
+
+state 28
+
+    (1) declaracion -> IMPRIMIR PARENTESIS_IZQUIERDO STRING PARENTESIS_DERECHO .
+
+    $end            reduce using rule 1 (declaracion -> IMPRIMIR PARENTESIS_IZQUIERDO STRING PARENTESIS_DERECHO .)
+
+
+state 29
+
+    (11) expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS . expresion
+    (6) expresion -> . expresion MAS expresion
+    (7) expresion -> . expresion MENOS expresion
+    (8) expresion -> . expresion MULTIPLICACION expresion
+    (9) expresion -> . expresion DIVISION expresion
+    (10) expresion -> . expresion MENOR expresion
+    (11) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion
+    (15) expresion -> . NUMERO
+    (16) expresion -> . VARIABLE
+    (17) expresion -> . END
+
+    PARENTESIS_IZQUIERDO shift and go to state 3
+    NUMERO          shift and go to state 8
+    VARIABLE        shift and go to state 12
+    END             shift and go to state 9
+
+    expresion                      shift and go to state 33
+
+state 30
+
+    (12) expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS . expresion
+    (6) expresion -> . expresion MAS expresion
+    (7) expresion -> . expresion MENOS expresion
+    (8) expresion -> . expresion MULTIPLICACION expresion
+    (9) expresion -> . expresion DIVISION expresion
+    (10) expresion -> . expresion MENOR expresion
+    (11) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion
+    (15) expresion -> . NUMERO
+    (16) expresion -> . VARIABLE
+    (17) expresion -> . END
+
+    PARENTESIS_IZQUIERDO shift and go to state 3
+    NUMERO          shift and go to state 8
+    VARIABLE        shift and go to state 12
+    END             shift and go to state 9
+
+    expresion                      shift and go to state 34
+
+state 31
+
+    (13) expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION . expresion
+    (6) expresion -> . expresion MAS expresion
+    (7) expresion -> . expresion MENOS expresion
+    (8) expresion -> . expresion MULTIPLICACION expresion
+    (9) expresion -> . expresion DIVISION expresion
+    (10) expresion -> . expresion MENOR expresion
+    (11) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion
+    (15) expresion -> . NUMERO
+    (16) expresion -> . VARIABLE
+    (17) expresion -> . END
+
+    PARENTESIS_IZQUIERDO shift and go to state 3
+    NUMERO          shift and go to state 8
+    VARIABLE        shift and go to state 12
+    END             shift and go to state 9
+
+    expresion                      shift and go to state 35
+
+state 32
+
+    (14) expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION . expresion
+    (6) expresion -> . expresion MAS expresion
+    (7) expresion -> . expresion MENOS expresion
+    (8) expresion -> . expresion MULTIPLICACION expresion
+    (9) expresion -> . expresion DIVISION expresion
+    (10) expresion -> . expresion MENOR expresion
+    (11) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion
+    (12) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion
+    (13) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion
+    (14) expresion -> . PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion
+    (15) expresion -> . NUMERO
+    (16) expresion -> . VARIABLE
+    (17) expresion -> . END
+
+    PARENTESIS_IZQUIERDO shift and go to state 3
+    NUMERO          shift and go to state 8
+    VARIABLE        shift and go to state 12
+    END             shift and go to state 9
+
+    expresion                      shift and go to state 36
+
+state 33
+
+    (11) expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion .
+    (6) expresion -> expresion . MAS expresion
+    (7) expresion -> expresion . MENOS expresion
+    (8) expresion -> expresion . MULTIPLICACION expresion
+    (9) expresion -> expresion . DIVISION expresion
+    (10) expresion -> expresion . MENOR expresion
+
+    MAS             reduce using rule 11 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion .)
+    MENOS           reduce using rule 11 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion .)
+    MENOR           reduce using rule 11 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion .)
+    $end            reduce using rule 11 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion .)
+    PARENTESIS_DERECHO reduce using rule 11 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion .)
+    MULTIPLICACION  shift and go to state 16
+    DIVISION        shift and go to state 17
+
+  ! MULTIPLICACION  [ reduce using rule 11 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion .) ]
+  ! DIVISION        [ reduce using rule 11 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MAS expresion .) ]
+  ! MAS             [ shift and go to state 14 ]
+  ! MENOS           [ shift and go to state 15 ]
+  ! MENOR           [ shift and go to state 18 ]
+
+
+state 34
+
+    (12) expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion .
+    (6) expresion -> expresion . MAS expresion
+    (7) expresion -> expresion . MENOS expresion
+    (8) expresion -> expresion . MULTIPLICACION expresion
+    (9) expresion -> expresion . DIVISION expresion
+    (10) expresion -> expresion . MENOR expresion
+
+    MAS             reduce using rule 12 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion .)
+    MENOS           reduce using rule 12 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion .)
+    MENOR           reduce using rule 12 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion .)
+    $end            reduce using rule 12 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion .)
+    PARENTESIS_DERECHO reduce using rule 12 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion .)
+    MULTIPLICACION  shift and go to state 16
+    DIVISION        shift and go to state 17
+
+  ! MULTIPLICACION  [ reduce using rule 12 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion .) ]
+  ! DIVISION        [ reduce using rule 12 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MENOS expresion .) ]
+  ! MAS             [ shift and go to state 14 ]
+  ! MENOS           [ shift and go to state 15 ]
+  ! MENOR           [ shift and go to state 18 ]
+
+
+state 35
+
+    (13) expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion .
+    (6) expresion -> expresion . MAS expresion
+    (7) expresion -> expresion . MENOS expresion
+    (8) expresion -> expresion . MULTIPLICACION expresion
+    (9) expresion -> expresion . DIVISION expresion
+    (10) expresion -> expresion . MENOR expresion
+
+    MAS             reduce using rule 13 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion .)
+    MENOS           reduce using rule 13 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion .)
+    MULTIPLICACION  reduce using rule 13 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion .)
+    DIVISION        reduce using rule 13 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion .)
+    MENOR           reduce using rule 13 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion .)
+    $end            reduce using rule 13 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion .)
+    PARENTESIS_DERECHO reduce using rule 13 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO MULTIPLICACION expresion .)
+
+  ! MAS             [ shift and go to state 14 ]
+  ! MENOS           [ shift and go to state 15 ]
+  ! MULTIPLICACION  [ shift and go to state 16 ]
+  ! DIVISION        [ shift and go to state 17 ]
+  ! MENOR           [ shift and go to state 18 ]
+
+
+state 36
+
+    (14) expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion .
+    (6) expresion -> expresion . MAS expresion
+    (7) expresion -> expresion . MENOS expresion
+    (8) expresion -> expresion . MULTIPLICACION expresion
+    (9) expresion -> expresion . DIVISION expresion
+    (10) expresion -> expresion . MENOR expresion
+
+    MAS             reduce using rule 14 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion .)
+    MENOS           reduce using rule 14 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion .)
+    MULTIPLICACION  reduce using rule 14 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion .)
+    DIVISION        reduce using rule 14 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion .)
+    MENOR           reduce using rule 14 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion .)
+    $end            reduce using rule 14 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion .)
+    PARENTESIS_DERECHO reduce using rule 14 (expresion -> PARENTESIS_IZQUIERDO expresion PARENTESIS_DERECHO DIVISION expresion .)
+
+  ! MAS             [ shift and go to state 14 ]
+  ! MENOS           [ shift and go to state 15 ]
+  ! MULTIPLICACION  [ shift and go to state 16 ]
+  ! DIVISION        [ shift and go to state 17 ]
+  ! MENOR           [ shift and go to state 18 ]
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for MAS in state 26 resolved as shift
+WARNING: shift/reduce conflict for MENOS in state 26 resolved as shift
+WARNING: shift/reduce conflict for MULTIPLICACION in state 26 resolved as shift
+WARNING: shift/reduce conflict for DIVISION in state 26 resolved as shift
+WARNING: shift/reduce conflict for MENOR in state 26 resolved as shift
